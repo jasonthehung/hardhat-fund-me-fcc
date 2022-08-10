@@ -3,6 +3,7 @@ pragma solidity ^0.8.8;
 
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
+// import "hardhat/console.sol";
 
 error FundMe_NotOwner();
 error FundMe_SendFailed();
@@ -50,8 +51,8 @@ contract FundMe {
             msg.value.getConversionRate(priceFeed) >= MINIMUM_USD,
             "Didn't send enough!"
         );
-        funders.push(msg.sender);
         addressToAmountFunded[msg.sender] = msg.value;
+        funders.push(msg.sender);
     }
 
     function withdraw() public onlyOwner {
