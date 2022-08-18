@@ -1,6 +1,7 @@
 require("dotenv").config()
 require("@nomicfoundation/hardhat-toolbox")
 require("hardhat-deploy")
+require("hardhat-gas-reporter")
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -25,5 +26,12 @@ module.exports = {
         user: {
             default: 1,
         },
+    },
+    gasReporter: {
+        enabled: true,
+        outputFile: "gas-reporter.txt",
+        noColors: true,
+        currency: "USD",
+        token: "ETH",
     },
 }

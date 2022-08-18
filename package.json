@@ -1,4 +1,7 @@
 {
+  "name": "hardhat fund me",
+  "auther": "Jason Wang",
+  "version": "1.0.0",
   "devDependencies": {
     "@ethersproject/abi": "^5.4.7",
     "@ethersproject/providers": "^5.4.7",
@@ -19,5 +22,11 @@
     "solc": "^0.8.15",
     "solidity-coverage": "^0.7.21",
     "typechain": "^8.1.0"
+  },
+  "scripts": {
+    "test": "yarn hardhat test",
+    "test-staging": "yarn hardhat test --network rinkeby",
+    "format": "yarn prettier --write .",
+    "coverage": "yarn hardhat coverage"
   }
 }
